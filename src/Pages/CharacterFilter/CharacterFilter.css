@@ -1,0 +1,230 @@
+.characterfilter {
+    background-color: rgb(190, 190, 190) !important;
+}
+
+.filter-container {
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.filter-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.filter-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-select label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.species-dropdown {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.species-dropdown:hover {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.species-dropdown:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.filter-results {
+    margin-top: 30px;
+}
+
+.results-count {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 40px 20px;
+}
+
+.containerCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Paginación */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-number {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 40px;
+}
+
+.page-number:hover {
+    border-color: #007bff;
+    color: #007bff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+.page-number.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    font-weight: 700;
+}
+
+.pagination-info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .filter-container h1 {
+        font-size: 2rem;
+    }
+
+    .containerCards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .pagination-container {
+        gap: 10px;
+    }
+
+    .pagination-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .page-number {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        min-width: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-container {
+        padding: 20px 10px;
+    }
+
+    .filter-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .containerCards {
+        grid-template-columns: 1fr;
+    }
+
+    .pagination-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pagination-btn {
+        width: 100%;
+    }
+
+    .pagination-numbers {
+        max-width: 100%;
+    }
+
+    .page-number {
+        flex: 1;
+        min-width: 30px;
+    }
+}

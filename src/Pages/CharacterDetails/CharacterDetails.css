@@ -1,0 +1,124 @@
+.characterdetails {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 40px;
+    padding: 40px;
+    max-width: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.characterdetails img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    flex-shrink: 0;
+}
+
+.characterdetails h1 {
+    color: #00ff88;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    font-weight: 700;
+}
+
+.characterdetails p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+}
+
+.characterdetails p strong {
+    color: #00ffff;
+    margin-right: 10px;
+    font-weight: 600;
+    min-width: 100px;
+}
+
+.characterdetails button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #00ff88 0%, #00ffcc 100%);
+    color: #1a1a2e;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+    align-self: flex-start;
+}
+
+.characterdetails button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 136, 0.5);
+}
+
+.characterdetails button:active {
+    transform: translateY(0);
+}
+
+/* Contenedor para la información */
+.character-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .characterdetails {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .characterdetails img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .characterdetails h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .characterdetails button {
+        align-self: center;
+    }
+
+    .character-info {
+        width: 100%;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .characterdetails {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .characterdetails img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .characterdetails h1 {
+        font-size: 1.5rem;
+    }
+
+    .characterdetails p {
+        font-size: 0.95rem;
+    }
+}

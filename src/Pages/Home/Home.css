@@ -1,0 +1,11 @@
+.characters{
+    background-color: rgb(190, 190, 190) !important;
+}
+.containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 90%;
+    padding: 20px;
+    padding-left: 55px;
+}

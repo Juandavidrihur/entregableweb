@@ -1,0 +1,205 @@
+@keyframes neonFlicker {
+  0%, 18%, 22%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00a3e0, 0 0 40px #00a3e0;
+  }
+  20%, 24%, 55% {
+    text-shadow: 0 0 5px #00d4ff, 0 0 10px #00a3e0;
+  }
+}
+
+/* ========== CARD PRINCIPAL ========== */
+.card-character {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border: 2px solid #00d4ff;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 280px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.6),
+    inset 0 0 20px rgba(0, 212, 255, 0.1);
+  position: relative;
+  animation: portalGlow 3s ease-in-out infinite;
+}
+
+
+
+.card-character:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 
+    0 15px 40px rgba(0, 212, 255, 0.8),
+    inset 0 0 20px rgba(0, 212, 255, 0.2),
+    0 0 40px rgba(95, 221, 49, 0.4);
+  border-color: #5fdd31;
+}
+
+/* ========== CONTENEDOR IMAGEN ========== */
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-character:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* ========== STATUS BADGE ========== */
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  border: 1px solid;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+}
+
+.status-badge.alive {
+  background: rgba(95, 221, 49, 0.8);
+  color: #fff;
+  border-color: #5fdd31;
+  box-shadow: 0 0 15px rgba(95, 221, 49, 0.8);
+}
+
+.status-badge.dead {
+  background: rgba(255, 0, 0, 0.8);
+  color: #fff;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+.status-badge.unknown {
+  background: rgba(180, 0, 255, 0.8);
+  color: #fff;
+  border-color: #b600ff;
+  box-shadow: 0 0 15px rgba(180, 0, 255, 0.6);
+}
+
+/* ========== CONTENIDO ========== */
+.card-content {
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%);
+  border-top: 1px solid rgba(0, 212, 255, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.card-name {
+  margin: 0 0 15px 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #00d4ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: neonFlicker 3s infinite;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+/* ========== INFO ========== */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  background: rgba(95, 221, 49, 0.1);
+  border-left: 3px solid #5fdd31;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.card-character:hover .info-item {
+  background: rgba(95, 221, 49, 0.2);
+  padding-left: 15px;
+}
+
+.info-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #5fdd31;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 13px;
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+/* ========== FOOTER CON EFECTO PORTAL ========== */
+.card-footer {
+  height: 6px;
+  background: linear-gradient(90deg, 
+    transparent,
+    #00d4ff,
+    #5fdd31,
+    #b600ff,
+    #00d4ff,
+    transparent);
+  position: relative;
+  z-index: 2;
+  animation: portalGlow 2s ease-in-out infinite;
+}
+
+.portal-effect {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(0, 212, 255, 0.8),
+    rgba(95, 221, 49, 0.8),
+    rgba(180, 0, 255, 0.8),
+    rgba(0, 212, 255, 0.8),
+    transparent);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .card-character {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .card-image-container {
+    height: 280px;
+  }
+
+  .card-name {
+    font-size: 18px;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .info-label {
+    font-size: 10px;
+  }
+
+  .info-value {
+    font-size: 12px;
+  }
+}
